@@ -13,15 +13,20 @@ void PedirFecha(){
 }
 void Calcular(){
 	anos=anoac-ano;
-	if(mesac>=mes&&diac>dia){
-		anos=anos+1;
+	if(mesac<=mes){
+		if(diac>=dia&&mesac<=mes){
+			anos=anos-1;
+		}
+		else if(mesac<=mes){
+			anos=anos-1;
+		}
 	}
 }
 void Mostrar(){
 	cout<<"Tu edad es: "<<anos<<" anos"<<endl;
 }
 int main(){
-	anoac=2022;
+	anoac=2023;
 	mesac=2;
 	diac=9;
 	PedirFecha();
